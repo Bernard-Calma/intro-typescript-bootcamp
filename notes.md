@@ -20,3 +20,10 @@
 * Type utuls
 * Optionals
 * Functional overloading
+
+## Advantages of using Typescript
+* With a good IDE you can capture certain errors at compile time before they run time level
+* Support for static typing (string typing)
+* TypeScript, once trans-piled down to JS can runs on any browser or JavaScript engine like NodeJS
+* Using a good IDE, the developer can have IntelliSense with TypeScript
+* Namespaces if used properly can be a great tool for modular development.
