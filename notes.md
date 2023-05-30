@@ -1,4 +1,4 @@
-## What is TypeScript?
+# What is TypeScript?
 
 * Developed by Microsoft and Released in October 2012
 * Superset of JavaScript
@@ -8,8 +8,8 @@
 * Version 5.0.4 is now availble
 * typescriptlang.org is the main source of documentation for TS
 
-## Introduction to TypeScript
-# Featurs
+# Introduction to TypeScript
+## Features
 * Interfaces
 * Namespaces
 * Generics
@@ -21,7 +21,7 @@
 * Optionals
 * Functional overloading
 
-## Advantages of using Typescript
+# Advantages of using Typescript
 * With a good IDE you can capture certain errors at compile time before they run time level
 * Support for static typing (string typing)
 * TypeScript, once trans-piled down to JS can runs on any browser or JavaScript engine like NodeJS
