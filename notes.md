@@ -34,3 +34,12 @@
 * Any type
 * Others are unknown, tuple, array, union, interface and null
 * never
+
+# TypeScript Generics
+* Genrics is somewhat related to concepts like lazy loading, polymorphism and abstract classes and functions.
+* There is a time component involved.
+* It makes code more flexible, reusable and may even lessen duplication of code.
+* TS Generics improve Type safety.
+* Genertics can be used wherever passing a parameter is involved.
+
+    
