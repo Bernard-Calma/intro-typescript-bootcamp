@@ -27,3 +27,10 @@
 * TypeScript, once trans-piled down to JS can runs on any browser or JavaScript engine like NodeJS
 * Using a good IDE, the developer can have IntelliSense with TypeScript
 * Namespaces if used properly can be a great tool for modular development.
+
+# TypeScript Types
+* Primitve (built-in types based on JavaScript)
+* User-defined types (basucally objects)
+* Any type
+* Others are unknown, tuple, array, union, interface and null
+* never
