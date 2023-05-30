@@ -42,4 +42,21 @@
 * TS Generics improve Type safety.
 * Genertics can be used wherever passing a parameter is involved.
 
-    
+# TypeScript Decorators
+NOTE  Decorators are an experimental feature that may change in future releases.
+* Functions that are called by adding an annotation (@) to the member of a class.
+* Not yet fully implemented in TypeScript although extensively used in Angular.
+* Used to add metadata to a class (but can also have use in the DOM).
+* Cannot be used in inherited classes.
+* Changes may be necessary to the config file, so target must be ES5 or above and experimentalDecorators key must be set to true
+
+Command Line:
+    tsc --target ES5 --experimentalDecorators
+
+tsconfig.json:
+    {
+        "compilerOptions": {
+            "target": "ES5",
+            "experimentalDecorators": true
+        }
+    }
