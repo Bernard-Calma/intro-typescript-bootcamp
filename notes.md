@@ -62,3 +62,22 @@ tsconfig.json:
         }
     }
 ```
+
+# Unusual Types
+## All Types
+* Intersection Types
+* Union Types
+* Generic Types
+* Utility Types
+* Partial
+* Required
+* Readonly
+* Pick
+* Omit
+* Extract
+* Exclude
+* Record
+* NonNullable
+* Mapped Types
+* Typed Guards
+* Conditional Types
