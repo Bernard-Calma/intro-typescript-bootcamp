@@ -51,12 +51,14 @@ NOTE  Decorators are an experimental feature that may change in future release
 * Changes may be necessary to the config file, so target must be ES5 or above and experimentalDecorators key must be set to true
 
 Command Line:
-    tsc --target ES5 --experimentalDecorators
+>tsc --target ES5 --experimentalDecorators
 
 tsconfig.json:
+```
     {
         "compilerOptions": {
             "target": "ES5",
             "experimentalDecorators": true
         }
     }
+```
