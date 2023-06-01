@@ -81,3 +81,9 @@ tsconfig.json:
 * Mapped Types
 * Typed Guards
 * Conditional Types
+
+# CLI Commands
+* Run tsc and watch for changes in the code. (Like nodemon / live server)
+```
+tsc -w
+```
