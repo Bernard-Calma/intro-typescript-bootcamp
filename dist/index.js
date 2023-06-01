@@ -1,8 +1,19 @@
 "use strict";
-let interestCalc = function iCalc(x, y) { return x * y; };
-let iCalc;
-const irCalculator = (p, r) => p * r;
-iCalc = irCalculator;
-const printInterest = (p, r, fIntCalc) => fIntCalc(p, r);
-console.log(iCalc(1000, 0.10));
-console.log(printInterest(1000, 0.10, iCalc));
+var _a, _b;
+const posts = [];
+const myPost = {
+    userId: 1,
+    postId: 1,
+    title: "TypeScript",
+    body: {
+        topic: "",
+        explanation: "Adds functionality"
+    }
+};
+console.log(myPost.title);
+if (myPost.body && myPost.body.topic)
+    console.log(myPost.body.topic);
+posts.push((_a = myPost.body.topic) !== null && _a !== void 0 ? _a : "No Topic");
+if ((_b = myPost.body) === null || _b === void 0 ? void 0 : _b.topic)
+    console.log(myPost.title);
+console.log(posts);

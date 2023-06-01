@@ -91,12 +91,45 @@
 // console.log(typeof(investment))
 
 // Callback function
-let interestCalc = function iCalc(x: number, y: number){return x * y} ;
-let iCalc: (x: number, y: number) => number;
-const irCalculator = (p: number, r: number) => p*r
-iCalc = irCalculator;
+// let interestCalc = function iCalc(x: number, y: number){return x * y} ;
+// let iCalc: (x: number, y: number) => number;
+// const irCalculator = (p: number, r: number) => p*r
+// iCalc = irCalculator;
 
-const printInterest = (p: number, r: number, fIntCalc: Function) => fIntCalc(p, r)
+// const printInterest = (p: number, r: number, fIntCalc: Function) => fIntCalc(p, r)
 
-console.log(iCalc(1000, 0.10))
-console.log(printInterest(1000, 0.10, iCalc))
+// console.log(iCalc(1000, 0.10))
+// console.log(printInterest(1000, 0.10, iCalc))
+
+// Data Structure
+const posts: string[] = []
+type post = {
+    userId: number;
+    postId: number;
+    title: string;
+    body: {
+        topic: any,
+        explanation: string
+    };
+}
+
+const myPost: post = {
+    userId: 1,
+    postId: 1,
+    title: "TypeScript",
+    body: {
+        topic: "",
+        explanation: "Adds functionality"
+    }
+}
+
+console.log(myPost.title)
+
+// JavaScript
+if (myPost.body && myPost.body.topic) console.log(myPost.body.topic)
+// TypeScript
+// posts.push(myPost.body.topic || "No Topic")
+// To remove null or undefined value use ??
+posts.push(myPost.body.topic ?? "No Topic")
+if(myPost.body?.topic) console.log(myPost.title)
+console.log(posts)
