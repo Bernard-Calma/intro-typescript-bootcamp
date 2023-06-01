@@ -63,4 +63,11 @@ const compareWord = (first: string, second: string) : "first is earlier" | "same
     return "same"
 }
 
-console.log(compareWord("Axel", "Axle"))
+console.log(compareWord("Bernard", "Bernards"))
+
+// return a specific integer
+const compare = (a: number, b: number): -1 | 0 | 1 => {
+    return a === b ? 0 : a > b ? 1 : -1;
+}
+
+console.log(compare(1,1))
