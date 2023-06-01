@@ -74,18 +74,29 @@
 
 // Boolean
 // return value alias
-type returnable = "returnString" | "returnNumber"
-const irCalculator = (
-    p: number, 
-    r:number, 
-    returnValue: returnable
-    ) => {
-        if (returnValue === "returnNumber")
-            return p*r;
-        else
-            return `$${p*r}`
-};
+// type returnable = "returnString" | "returnNumber"
+// const irCalculator = (
+//     p: number, 
+//     r:number, 
+//     returnValue: returnable
+//     ) => {
+//         if (returnValue === "returnNumber")
+//             return p*r;
+//         else
+//             return `$${p*r}`
+// };
 
-let investment = irCalculator(1000, 0.10, "returnNumber");
-console.log("Interest is " + investment)
-console.log(typeof(investment))
+// let investment = irCalculator(1000, 0.10, "returnNumber");
+// console.log("Interest is " + investment)
+// console.log(typeof(investment))
+
+// Callback function
+let interestCalc = function iCalc(x: number, y: number){return x * y} ;
+let iCalc: (x: number, y: number) => number;
+const irCalculator = (p: number, r: number) => p*r
+iCalc = irCalculator;
+
+const printInterest = (p: number, r: number, fIntCalc: Function) => fIntCalc(p, r)
+
+console.log(iCalc(1000, 0.10))
+console.log(printInterest(1000, 0.10, iCalc))
