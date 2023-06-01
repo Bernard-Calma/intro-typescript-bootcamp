@@ -55,19 +55,37 @@
 // console.log(employee);
 
 // return a specific string
-const compareWord = (first: string, second: string) : "first is earlier" | "same" | "first is later" => {
-    if (first < second)
-        return "first is earlier"
-    if (first > second)
-        return "first is later"
-    return "same"
-}
+// const compareWord = (first: string, second: string) : "first is earlier" | "same" | "first is later" => {
+//     if (first < second)
+//         return "first is earlier"
+//     if (first > second)
+//         return "first is later"
+//     return "same"
+// }
 
-console.log(compareWord("Bernard", "Bernards"))
+// console.log(compareWord("Bernard", "Bernards"))
 
-// return a specific integer
-const compare = (a: number, b: number): -1 | 0 | 1 => {
-    return a === b ? 0 : a > b ? 1 : -1;
-}
+// // return a specific integer
+// const compare = (a: number, b: number): -1 | 0 | 1 => {
+//     return a === b ? 0 : a > b ? 1 : -1;
+// }
 
-console.log(compare(1,1))
+// console.log(compare(1,1))
+
+// Boolean
+// return value alias
+type returnable = "returnString" | "returnNumber"
+const irCalculator = (
+    p: number, 
+    r:number, 
+    returnValue: returnable
+    ) => {
+        if (returnValue === "returnNumber")
+            return p*r;
+        else
+            return `$${p*r}`
+};
+
+let investment = irCalculator(1000, 0.10, "returnNumber");
+console.log("Interest is " + investment)
+console.log(typeof(investment))

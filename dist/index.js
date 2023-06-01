@@ -1,13 +1,10 @@
 "use strict";
-const compareWord = (first, second) => {
-    if (first < second)
-        return "first is earlier";
-    if (first > second)
-        return "first is later";
-    return "same";
+const irCalculator = (p, r, returnValue) => {
+    if (returnValue === "returnNumber")
+        return p * r;
+    else
+        return `$${p * r}`;
 };
-console.log(compareWord("Bernard", "Bernards"));
-const compare = (a, b) => {
-    return a === b ? 0 : a > b ? 1 : -1;
-};
-console.log(compare(1, 1));
+let investment = irCalculator(1000, 0.10, "returnNumber");
+console.log("Interest is " + investment);
+console.log(typeof (investment));
