@@ -1,19 +1,17 @@
 "use strict";
-var _a, _b;
-const posts = [];
-const myPost = {
-    userId: 1,
-    postId: 1,
-    title: "TypeScript",
-    body: {
-        topic: "",
-        explanation: "Adds functionality"
+class Competetion {
+    constructor(competitionName, compId) {
+        this.competitionName = competitionName;
+        this.compId = compId;
+        this.competetors = [];
     }
-};
-console.log(myPost.title);
-if (myPost.body && myPost.body.topic)
-    console.log(myPost.body.topic);
-posts.push((_a = myPost.body.topic) !== null && _a !== void 0 ? _a : "No Topic");
-if ((_b = myPost.body) === null || _b === void 0 ? void 0 : _b.topic)
-    console.log(myPost.title);
-console.log(posts);
+    addCompetitor(comptetitor) {
+        this.competetors.push(comptetitor);
+    }
+    competitionDetails() {
+        return this.competitionName + ', ' + this.compId;
+    }
+}
+const competetion = new Competetion("Weight Loss COmpetetion 20233", 100);
+competetion.addCompetitor("Competitor 1");
+console.log(competetion);

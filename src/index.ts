@@ -102,34 +102,55 @@
 // console.log(printInterest(1000, 0.10, iCalc))
 
 // Data Structure
-const posts: string[] = []
-type post = {
-    userId: number;
-    postId: number;
-    title: string;
-    body: {
-        topic: any,
-        explanation: string
-    };
-}
+// const posts: string[] = []
+// type post = {
+//     userId: number;
+//     postId: number;
+//     title: string;
+//     body: {
+//         topic: any,
+//         explanation: string
+//     };
+// }
 
-const myPost: post = {
-    userId: 1,
-    postId: 1,
-    title: "TypeScript",
-    body: {
-        topic: "",
-        explanation: "Adds functionality"
+// const myPost: post = {
+//     userId: 1,
+//     postId: 1,
+//     title: "TypeScript",
+//     body: {
+//         topic: "",
+//         explanation: "Adds functionality"
+//     }
+// }
+
+// console.log(myPost.title)
+
+// // JavaScript
+// if (myPost.body && myPost.body.topic) console.log(myPost.body.topic)
+// // TypeScript
+// // posts.push(myPost.body.topic || "No Topic")
+// // To remove null or undefined value use ??
+// posts.push(myPost.body.topic ?? "No Topic")
+// if(myPost.body?.topic) console.log(myPost.title)
+// console.log(posts)
+
+// OOP
+class Competetion {
+    // competitionName: string = "";
+    private competetors: string[] = []
+    constructor(
+        private competitionName: string,
+        private readonly compId: number
+        ) {
+    }
+    addCompetitor(comptetitor: string) {
+        this.competetors.push(comptetitor)
+    }
+    competitionDetails() {
+        return this.competitionName + ', ' + this.compId;
     }
 }
 
-console.log(myPost.title)
-
-// JavaScript
-if (myPost.body && myPost.body.topic) console.log(myPost.body.topic)
-// TypeScript
-// posts.push(myPost.body.topic || "No Topic")
-// To remove null or undefined value use ??
-posts.push(myPost.body.topic ?? "No Topic")
-if(myPost.body?.topic) console.log(myPost.title)
-console.log(posts)
+const competetion = new Competetion("Weight Loss COmpetetion 20233", 100);
+competetion.addCompetitor("Competitor 1");
+console.log(competetion)
