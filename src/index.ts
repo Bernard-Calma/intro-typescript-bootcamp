@@ -135,32 +135,85 @@
 // console.log(posts)
 
 // OOP
-class Competetion {
-    // competitionName: string = "";
-    private competetors: string[] = [];
-    private admin: string = "";
-    constructor(
-        private competitionName: string,
-        private readonly compId: number
-        ) {
+// class Competetion {
+//     // competitionName: string = "";
+//     private competetors: string[] = [];
+//     private admin: string = "";
+//     constructor(
+//         private competitionName: string,
+//         private readonly compId: number
+//         ) {
+//     }
+//     addCompetitor(comptetitor: string) {
+//         this.competetors.push(comptetitor)
+//     }
+//     competitionDetails() {
+//         return this.competitionName + ', ' + this.compId;
+//     }
+//     get competitionID() {
+//         return this.compId
+//     }
+//     set competitionAdmin(adminName: string) {
+//         if (adminName != "Bernard") this.admin = adminName;
+//     }
+// }
+
+// const competetion = new Competetion("Weight Loss COmpetetion 20233", 100);
+// competetion.addCompetitor("Competitor 1");
+// console.log(competetion.competitionDetails());
+// console.log(competetion.competitionID)
+// competetion.competitionAdmin = "Taiga";
+// console.log(competetion);
+
+// INTERFACE
+// Interface is a structure that defines that contract in your application.
+// A blueprint for a class (concrete class).
+// It defines the syntax for classes to follow.
+// Interface is not usable it's just defining how you class should look like.
+interface Competable {
+    competitors: string[];
+    admin: string;
+    // Optional - add ?
+    backupAdmin?: string;
+    // Functions
+    addCompetitor(competitor: string): void;
+    competitionDetails(): string;
+};
+
+class WeightLossCompetition implements Competable {
+    competitors: string[] = [];
+    admin: string = "";
+    backupAdmin: string = "";
+    addCompetitor(competitor: string): void {
+        this.competitors.push(competitor);
+    };
+    addBackupAdmin(backupAdmin: string): void {
+        this.backupAdmin = backupAdmin;
     }
-    addCompetitor(comptetitor: string) {
-        this.competetors.push(comptetitor)
+    competitionDetails(): string {
+        return this.competitors.toString();
+    };
+}
+
+class FantasyFootballCompetition implements Competable {
+    competitors: string[] = [];
+    admin: string = "";
+    playerCap: number = 20;
+    draftees: string[] = [];
+    constructor(cAdmin: string) {
+        this.admin = cAdmin;
     }
-    competitionDetails() {
-        return this.competitionName + ', ' + this.compId;
-    }
-    get competitionID() {
-        return this.compId
-    }
-    set competitionAdmin(adminName: string) {
-        if (adminName != "Bernard") this.admin = adminName;
+    addCompetitor(competitor: string): void {
+        this.competitors.push(competitor);
+    };
+    competitionDetails(): string {
+        return this.competitors.toString();
+    };
+    draftPlayer(rookie: string){
+        this.draftees.push(rookie)
     }
 }
 
-const competetion = new Competetion("Weight Loss COmpetetion 20233", 100);
-competetion.addCompetitor("Competitor 1");
-console.log(competetion.competitionDetails());
-console.log(competetion.competitionID)
-competetion.competitionAdmin = "Taiga";
-console.log(competetion);
+const weightLostCompete = new WeightLossCompetition()
+
+console.log(weightLostCompete)

@@ -1,28 +1,42 @@
 "use strict";
-class Competetion {
-    constructor(competitionName, compId) {
-        this.competitionName = competitionName;
-        this.compId = compId;
-        this.competetors = [];
+;
+class WeightLossCompetition {
+    constructor() {
+        this.competitors = [];
         this.admin = "";
+        this.backupAdmin = "";
     }
-    addCompetitor(comptetitor) {
-        this.competetors.push(comptetitor);
+    addCompetitor(competitor) {
+        this.competitors.push(competitor);
+    }
+    ;
+    addBackupAdmin(backupAdmin) {
+        this.backupAdmin = backupAdmin;
     }
     competitionDetails() {
-        return this.competitionName + ', ' + this.compId;
+        return this.competitors.toString();
     }
-    get competitionID() {
-        return this.compId;
+    ;
+}
+class FantasyFootballCompetition {
+    constructor(cAdmin) {
+        this.competitors = [];
+        this.admin = "";
+        this.playerCap = 20;
+        this.draftees = [];
+        this.admin = cAdmin;
     }
-    set competitionAdmin(adminName) {
-        if (adminName != "Bernard")
-            this.admin = adminName;
+    addCompetitor(competitor) {
+        this.competitors.push(competitor);
+    }
+    ;
+    competitionDetails() {
+        return this.competitors.toString();
+    }
+    ;
+    draftPlayer(rookie) {
+        this.draftees.push(rookie);
     }
 }
-const competetion = new Competetion("Weight Loss COmpetetion 20233", 100);
-competetion.addCompetitor("Competitor 1");
-console.log(competetion.competitionDetails());
-console.log(competetion.competitionID);
-competetion.competitionAdmin = "Taiga";
-console.log(competetion);
+const weightLostCompete = new WeightLossCompetition();
+console.log(weightLostCompete);
