@@ -214,36 +214,40 @@
 //     }
 // }
 
-// const weightLostCompete = new WeightLossCompetition()
-
-// console.log(weightLostCompete)
+// MODULE
+import { WeightLossCompetition } from "./class/WeightLossCompetition"
+const weightLostCompete = new WeightLossCompetition()
+weightLostCompete.addCompetitor("Bernard Calma")
+console.log(weightLostCompete.competitionDetails())
 
 // TYPES
-type Competitor = {
-    cName: string;
-    dateJoin: Date;
-}
+// type Competitor = {
+//     cName: string;
+//     dateJoin: Date;
+// }
 
-type Admins = {
-    adminID: number;
-}
+// type Admins = {
+//     adminID: number;
+// }
 
-type adminCompetitor = Competitor & Admins;
+// type adminCompetitor = Competitor & Admins;
 
-const bernard: adminCompetitor = {
-    adminID: 123,
-    cName: "Bernard",
-    dateJoin: new Date("6/4/2022")
-}
+// const bernard: adminCompetitor = {
+//     adminID: 123,
+//     cName: "Bernard",
+//     dateJoin: new Date("6/4/2022")
+// }
 
-const getDaysJoined = (competitor: adminCompetitor) => {
-    var today = new Date();
-    if ("dateJoin" in competitor) {
-        var daysJoined = today.getTime() - competitor.dateJoin.getTime()    
-        return Math.ceil(daysJoined / 1000 / 60 / 60 / 24)
-    }
-}
+// const getDaysJoined = (competitor: adminCompetitor) => {
+//     var today = new Date();
+//     if ("dateJoin" in competitor) {
+//         var daysJoined = today.getTime() - competitor.dateJoin.getTime()    
+//         return Math.ceil(daysJoined / 1000 / 60 / 60 / 24)
+//     }
+// }
 
-console.log(bernard)
-console.log(bernard.cName + " joined on " + bernard.dateJoin.toLocaleDateString('en-US'))
-console.log(getDaysJoined(bernard) + " day/s.")
+// console.log(bernard)
+// console.log(bernard.cName + " joined on " + bernard.dateJoin.toLocaleDateString('en-US'))
+// console.log(getDaysJoined(bernard) + " day/s.")
+
+// MODULES
