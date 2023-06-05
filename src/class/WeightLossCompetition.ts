@@ -1,17 +1,17 @@
-import { Competable } from "../iCompetable";
+import { Competable } from "../interface/iCompetable";
 
-export class WeightLossCompetition implements Competable {
-    competitors: string[] = [];
+export class WeightLossCompetition<T> implements Competable<T> {
+    competitors: T[] = [];
     admin: string = "";
     backupAdmin: string = "";
-    addCompetitor(competitor: string): void {
+    addCompetitor(competitor: T): void {
         this.competitors.push(competitor);
     };
     addBackupAdmin(backupAdmin: string): void {
         this.backupAdmin = backupAdmin;
     }
-    competitionDetails(): string {
-        return this.competitors.toString();
+    competitionDetails(): Array<T> {
+        return this.competitors;
     };
 }
 

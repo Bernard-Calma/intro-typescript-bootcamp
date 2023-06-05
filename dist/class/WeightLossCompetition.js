@@ -12,7 +12,7 @@ export class WeightLossCompetition {
         this.backupAdmin = backupAdmin;
     }
     competitionDetails() {
-        return this.competitors.toString();
+        return this.competitors;
     }
     ;
 }

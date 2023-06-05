@@ -1,18 +1,18 @@
-import { Competable } from "../iCompetable";
+import { Competable } from "../interface/iCompetable";
 
-class FantasyFootballCompetition implements Competable {
-    competitors: string[] = [];
+class FantasyFootballCompetition<T> implements Competable<T> {
+    competitors: T[] = [];
     admin: string = "";
     playerCap: number = 20;
     draftees: string[] = [];
     constructor(cAdmin: string) {
         this.admin = cAdmin;
     }
-    addCompetitor(competitor: string): void {
+    addCompetitor(competitor: T): void {
         this.competitors.push(competitor);
     };
-    competitionDetails(): string {
-        return this.competitors.toString();
+    competitionDetails(): Array<T> {
+        return this.competitors;
     };
     draftPlayer(rookie: string){
         this.draftees.push(rookie)

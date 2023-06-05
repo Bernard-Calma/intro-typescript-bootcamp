@@ -11,7 +11,7 @@ class FantasyFootballCompetition {
     }
     ;
     competitionDetails() {
-        return this.competitors.toString();
+        return this.competitors;
     }
     ;
     draftPlayer(rookie) {
