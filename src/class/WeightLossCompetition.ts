@@ -1,8 +1,9 @@
+import { HiDOM } from "../decorators/HIDOM.js";
 import { Competable } from "../interface/iCompetable";
-
+@HiDOM("<h2>Hello World!!!</h2>","#root")
 export class WeightLossCompetition<T> implements Competable<T> {
     competitors: T[] = [];
-    admin: string = "";
+    admin: string = "Bernard";
     backupAdmin: string = "";
     addCompetitor(competitor: T): void {
         this.competitors.push(competitor);
@@ -13,6 +14,7 @@ export class WeightLossCompetition<T> implements Competable<T> {
     competitionDetails(): Array<T> {
         return this.competitors;
     };
+    
 }
 
 // MODULE

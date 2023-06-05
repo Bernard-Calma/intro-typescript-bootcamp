@@ -222,6 +222,7 @@ weightLostCompete.addCompetitor({
   name: "Bernard",
   number: 9  
 })
+
 console.log(weightLostCompete.competitionDetails())
 
 // TYPES
@@ -254,5 +255,6 @@ console.log(weightLostCompete.competitionDetails())
 // console.log(bernard.cName + " joined on " + bernard.dateJoin.toLocaleDateString('en-US'))
 // console.log(getDaysJoined(bernard) + " day/s.")
 
-// GENERICS
+// DECORATORS
+
 
