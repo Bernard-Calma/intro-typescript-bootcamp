@@ -170,50 +170,80 @@
 // A blueprint for a class (concrete class).
 // It defines the syntax for classes to follow.
 // Interface is not usable it's just defining how you class should look like.
-interface Competable {
-    competitors: string[];
-    admin: string;
-    // Optional - add ?
-    backupAdmin?: string;
-    // Functions
-    addCompetitor(competitor: string): void;
-    competitionDetails(): string;
-};
+// interface Competable {
+//     competitors: string[];
+//     admin: string;
+//     // Optional - add ?
+//     backupAdmin?: string;
+//     // Functions
+//     addCompetitor(competitor: string): void;
+//     competitionDetails(): string;
+// };
 
-class WeightLossCompetition implements Competable {
-    competitors: string[] = [];
-    admin: string = "";
-    backupAdmin: string = "";
-    addCompetitor(competitor: string): void {
-        this.competitors.push(competitor);
-    };
-    addBackupAdmin(backupAdmin: string): void {
-        this.backupAdmin = backupAdmin;
-    }
-    competitionDetails(): string {
-        return this.competitors.toString();
-    };
+// class WeightLossCompetition implements Competable {
+//     competitors: string[] = [];
+//     admin: string = "";
+//     backupAdmin: string = "";
+//     addCompetitor(competitor: string): void {
+//         this.competitors.push(competitor);
+//     };
+//     addBackupAdmin(backupAdmin: string): void {
+//         this.backupAdmin = backupAdmin;
+//     }
+//     competitionDetails(): string {
+//         return this.competitors.toString();
+//     };
+// }
+
+// class FantasyFootballCompetition implements Competable {
+//     competitors: string[] = [];
+//     admin: string = "";
+//     playerCap: number = 20;
+//     draftees: string[] = [];
+//     constructor(cAdmin: string) {
+//         this.admin = cAdmin;
+//     }
+//     addCompetitor(competitor: string): void {
+//         this.competitors.push(competitor);
+//     };
+//     competitionDetails(): string {
+//         return this.competitors.toString();
+//     };
+//     draftPlayer(rookie: string){
+//         this.draftees.push(rookie)
+//     }
+// }
+
+// const weightLostCompete = new WeightLossCompetition()
+
+// console.log(weightLostCompete)
+
+// TYPES
+type Competitor = {
+    cName: string;
+    dateJoin: Date;
 }
 
-class FantasyFootballCompetition implements Competable {
-    competitors: string[] = [];
-    admin: string = "";
-    playerCap: number = 20;
-    draftees: string[] = [];
-    constructor(cAdmin: string) {
-        this.admin = cAdmin;
-    }
-    addCompetitor(competitor: string): void {
-        this.competitors.push(competitor);
-    };
-    competitionDetails(): string {
-        return this.competitors.toString();
-    };
-    draftPlayer(rookie: string){
-        this.draftees.push(rookie)
+type Admins = {
+    adminID: number;
+}
+
+type adminCompetitor = Competitor & Admins;
+
+const bernard: adminCompetitor = {
+    adminID: 123,
+    cName: "Bernard",
+    dateJoin: new Date("6/4/2022")
+}
+
+const getDaysJoined = (competitor: adminCompetitor) => {
+    var today = new Date();
+    if ("dateJoin" in competitor) {
+        var daysJoined = today.getTime() - competitor.dateJoin.getTime()    
+        return Math.ceil(daysJoined / 1000 / 60 / 60 / 24)
     }
 }
 
-const weightLostCompete = new WeightLossCompetition()
-
-console.log(weightLostCompete)
+console.log(bernard)
+console.log(bernard.cName + " joined on " + bernard.dateJoin.toLocaleDateString('en-US'))
+console.log(getDaysJoined(bernard) + " day/s.")

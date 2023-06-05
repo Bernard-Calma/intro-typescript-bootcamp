@@ -1,42 +1,16 @@
 "use strict";
-;
-class WeightLossCompetition {
-    constructor() {
-        this.competitors = [];
-        this.admin = "";
-        this.backupAdmin = "";
+const bernard = {
+    adminID: 123,
+    cName: "Bernard",
+    dateJoin: new Date("6/4/2022")
+};
+const getDaysJoined = (competitor) => {
+    var today = new Date();
+    if ("dateJoin" in competitor) {
+        var daysJoined = today.getTime() - competitor.dateJoin.getTime();
+        return Math.ceil(daysJoined / 1000 / 60 / 60 / 24);
     }
-    addCompetitor(competitor) {
-        this.competitors.push(competitor);
-    }
-    ;
-    addBackupAdmin(backupAdmin) {
-        this.backupAdmin = backupAdmin;
-    }
-    competitionDetails() {
-        return this.competitors.toString();
-    }
-    ;
-}
-class FantasyFootballCompetition {
-    constructor(cAdmin) {
-        this.competitors = [];
-        this.admin = "";
-        this.playerCap = 20;
-        this.draftees = [];
-        this.admin = cAdmin;
-    }
-    addCompetitor(competitor) {
-        this.competitors.push(competitor);
-    }
-    ;
-    competitionDetails() {
-        return this.competitors.toString();
-    }
-    ;
-    draftPlayer(rookie) {
-        this.draftees.push(rookie);
-    }
-}
-const weightLostCompete = new WeightLossCompetition();
-console.log(weightLostCompete);
+};
+console.log(bernard);
+console.log(bernard.cName + " joined on " + bernard.dateJoin.toLocaleDateString('en-US'));
+console.log(getDaysJoined(bernard) + " day/s.");
